@@ -1,0 +1,15 @@
+.body-container{
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.5vh;
+    align-items: center;
+    width: 100vw;
+}
+
+.greet{
+    color: darkgray;
+}
+
+.main{
+    font-size: 7vh;
+}
