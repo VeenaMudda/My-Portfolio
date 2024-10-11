@@ -1,0 +1,11 @@
+.navbar-beautyclub-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 4vh;
+    padding: 1%;
+}
+
+.portfolio-logo{
+    height: 4vh;
+}

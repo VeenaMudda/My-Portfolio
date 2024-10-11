@@ -5,6 +5,7 @@
     flex-direction: row;
     align-items: center;
     padding-left: 2vw;
+    overflow: scroll;
 }
 
 .title{
@@ -16,4 +17,34 @@
 .image-gradation{
     -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 700%, rgba(0,0,0,0) 700%);
     mask-image: radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 60%);
+}
+
+.page-container{
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.bodys-container{
+    display: flex;
+    flex-direction: row;
+    height: 93vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.content-container{
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+}
+
+.makeup-artist{
+    margin-top: -10%;
+}
+
+.apply-now{
+    background-color: red;
+    border-width: 0px;
+    height: 5vh;
 }
