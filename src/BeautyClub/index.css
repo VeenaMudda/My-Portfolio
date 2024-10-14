@@ -31,12 +31,12 @@
     height: 93vh;
     justify-content: space-around;
     align-items: center;
+    background: linear-gradient(to bottom,white,#e34b4d);
 }
 
 .content-container{
     display: flex;
     flex-direction: column;
-    background-color: aqua;
 }
 
 .makeup-artist{
@@ -47,4 +47,13 @@
     background-color: red;
     border-width: 0px;
     height: 5vh;
+}
+
+.login-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.login-here{
+    color: red;
 }

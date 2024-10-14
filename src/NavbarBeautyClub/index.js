@@ -15,7 +15,7 @@ const NavbarBeautyClub = () => {
             <Link to={"#"} onClick={scrollToTop}><img src={icon} alt='portfolio logo' className="portfolio-logo"/></Link>
             <div className='links-container'>
                 <Link to={'/'} className='navbar-link'>Home</Link>
-                <a>Community</a>
+                <Link to={'/community'} className='navbar-link'>Community</Link>
                 <a>Member Login</a>
             </div>
         </div>

@@ -1,6 +1,7 @@
 import './index.css';
 import self_makeup_1 from "../pictures/self_makeup_1.jpg";
 import NavbarBeautyClub from '../NavbarBeautyClub';
+import brushes from '../pictures/brushes.jpg';
 
 const BeautyClub = () => {
     return(
@@ -15,7 +16,12 @@ const BeautyClub = () => {
                     <h2>Welcome to MUA Hub!</h2>
                     <h1>Become a Professional </h1><br/><h1 className='makeup-artist'>Makeup Artist</h1>
                     <button className='apply-now'>Apply now</button>
+                    <div className='login-container'>
+                        <h3>Already a member?</h3> &nbsp;
+                        <h3 className='login-here'>Login here</h3>
+                    </div>
                 </div>
+                <img src={brushes} className='member-image'/>
             </div>
         </div>
     )
