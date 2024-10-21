@@ -11,19 +11,19 @@ import carousel5 from '../pictures/carousel_5.jpg';
 
 const Community = () => {
     return(
-        <>
+        <div className='community-main-page'>
             <div className='navbar-container'>
                 <Link to={'/'}><img src={portfolio_logo} alt='portfolio logo' className='portfolio-logo'/></Link>
                 <div className='links-container'>
-                    <p>Beauty Club</p>
-                    <p>About Us</p>
+                    <Link to={'/beauty'} className='navbar-link'>Beauty Club</Link>
+                    <Link to={'/about-us'} className='navbar-link'>About Us</Link>
                 </div>
             </div>
             <div className='community-page-container'>
                 <h2 className='welcome-to'>WELCOME TO</h2>
                 <h1>MUA Community</h1>
                 <h3 className='description'>This community is a hub for makeup enthusiasts. Here, you'll find a world rich in learning, connection and growth. Join this community to find a unique space to refine your skills, share your experiences, and collaborate with like-minded individuals.</h3>
-                <Carousel className='carousel-container'>
+                <Carousel className='carousel-container' autoPlay={true} infiniteLoop={true} showThumbs={false} showStatus={false} showArrows={false} showIndicators={false}>
                     <div>
                         <img src={carousel1} alt='carousel 1' className='carousel-image'/>
                     </div>
@@ -41,7 +41,7 @@ const Community = () => {
                     </div>
                 </Carousel>
             </div>
-        </>
+        </div>
     )
 }
 

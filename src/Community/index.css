@@ -2,7 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: aqua;
+    background: linear-gradient(to bottom,#92f7e0,#f2acb1);
+    overflow: scroll;
+    height: 100vh;
 }
 
 .welcome-to{
@@ -16,9 +18,20 @@
 }
 
 .carousel-image{
-    height: 60vh;
+    height: 65vh;
 }
 
 .carousel-container{
     width: 50vw;
+    height: 65vh;
+}
+
+.navbar-container{
+    position: fixed;
+    background-color: white;
+    width: 98vw;
+}
+
+.links-container{
+    align-items: center;
 }

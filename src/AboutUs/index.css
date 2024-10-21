@@ -1,0 +1,10 @@
+.about-us-navbar-container{
+    background-color: aqua;
+    width: 99vw;
+    height: 4vh;
+    padding: 1vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
