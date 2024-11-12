@@ -7,6 +7,7 @@ import aboutUs3 from '../pictures/about_us_3.jpg';
 import {Link} from 'react-router-dom';
 import Login from '../Login';
 import { useState } from 'react';
+import Modal from '../Modal';
 
 const AboutUs = () => {
     const [showLogin, setShowLogin] = useState(false);
@@ -41,7 +42,7 @@ const AboutUs = () => {
                 </div>
             </div>
             {showLogin && 
-            <div className='modal-overlay'><Login/></div>}
+            <Modal className='modal-overlay' onClose={handleLogin}><Login/></Modal>}
         </div>
     )
 }
