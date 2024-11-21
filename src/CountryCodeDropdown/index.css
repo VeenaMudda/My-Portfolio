@@ -1,0 +1,4 @@
+.phone-number-container{
+    display: flex;
+    flex-direction: row;
+}
