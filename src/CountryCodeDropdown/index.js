@@ -1,11 +1,31 @@
 import { useState } from 'react';
 import './index.css';
 import PhoneInput from 'react-phone-input-2';
+import uae from '../pictures/united-arab-emirates-flag-icon.png';
+import {isValidPhoneNumber} from 'libphonenumber-js';
 
 const CountryCodeDropdown = () => {
     const [phone, setPhone] = useState('');
+    const [isValid,setIsValid] = useState(true);
     const [selectedCode,setSelectedCode] = useState('');
-    
+    const [errorMessage,setErrorMessage] = useState('');
+
+    const handleSelectChange = (event) => {
+        setSelectedCode(event.target.value);
+    };
+
+    const handleLogin = () => {
+        if(!isValidPhoneNumber(`+${phone}`)){
+            setIsValid(false);
+            setErrorMessage('Invalid Phone Number');
+        }
+        else{
+            setIsValid(true);
+            setErrorMessage('');
+            console.log('Phone number is valid:', `+${phone}`);
+        }
+    }
+
     const countryCodes = [
         {code: '+91', name: 'India', flag: 'https://flagcdn.com/in.svg'},
         {code: '+971', name: 'United Arab Emirates', flag: 'https://flagcdn.com/ae.svg'},
@@ -15,9 +35,10 @@ const CountryCodeDropdown = () => {
 
     return(
         <div className="phone-number-container">
-            <label>Select Country Code: </label>
-            <PhoneInput country={'india'} value={phone} onChange={(phone) => setPhone(phone)}/>
-            <select id='countryCode' value={selectedCode} onChange={handleSelectChange}>a</select>
+            <h2>Login with phone number</h2>
+            <PhoneInput country={'india'} value={phone} onChange={(value) => setPhone(value)} inputStyle={{width: '100%',height: '40px'}}/>
+            {!isValid && <p style={{color: 'red'}}>{errorMessage}</p>}
+            <button onClick={handleLogin}>Login</button>
         </div>
     )
 }
