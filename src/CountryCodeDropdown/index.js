@@ -14,15 +14,37 @@ const CountryCodeDropdown = () => {
         setSelectedCode(event.target.value);
     };
 
-    const handleLogin = () => {
+    const handleLogin = async() => {
         if(!isValidPhoneNumber(`+${phone}`)){
             setIsValid(false);
             setErrorMessage('Invalid Phone Number');
+            return;
         }
-        else{
-            setIsValid(true);
-            setErrorMessage('');
-            console.log('Phone number is valid:', `+${phone}`);
+        //else{
+          //  setIsValid(true);
+            //setErrorMessage('');
+            //console.log('Phone number is valid:', `+${phone}`);
+        //}
+        try{
+            const response = await fetch('/api/send-otp',{
+                method: 'POST',
+                headers: {'Content-Type':'application/json'},
+                body: JSON.stringify({phone: `+${phone}`}),
+            });
+            const data = await response.json();
+            console.log('OTP Sent:', data);
+        }
+        catch(error){
+            console.error('Error sending OTP:', error);
+        }
+    }
+
+    const handleSendOtp = async() => {
+        const formattedPhone = `+${phone}`;
+        
+        if(!isValidPhoneNumber(formattedPhone)){
+            alert('Invalid Phone Number');
+            return;
         }
     }
 
