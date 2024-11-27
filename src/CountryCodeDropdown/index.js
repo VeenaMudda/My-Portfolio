@@ -46,6 +46,20 @@ const CountryCodeDropdown = () => {
             alert('Invalid Phone Number');
             return;
         }
+
+        try{
+            const response = await fetch('/api/send-otp',{
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({phone: formattedPhone}),
+            });
+
+            const data = await response.json();
+            if(data.success){
+                console.log('OTP Sent:',data);
+            }
+            else{//}
+        }
     }
 
     const countryCodes = [
