@@ -1,4 +1,4 @@
-import { useState } from 'react';
+/*import { useState } from 'react';
 import './index.css';
 import PhoneInput from 'react-phone-input-2';
 import uae from '../pictures/united-arab-emirates-flag-icon.png';
@@ -26,7 +26,7 @@ const CountryCodeDropdown = () => {
             //console.log('Phone number is valid:', `+${phone}`);
         //}
         try{
-            const response = await fetch('/api/send-otp',{
+            const response = await fetch('http://localhost:3001/api/send-otp',{
                 method: 'POST',
                 headers: {'Content-Type':'application/json'},
                 body: JSON.stringify({phone: `+${phone}`}),
@@ -48,7 +48,7 @@ const CountryCodeDropdown = () => {
         }
 
         try{
-            const response = await fetch('/api/send-otp',{
+            const response = await fetch('http://localhost:3001/api/send-otp',{
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({phone: formattedPhone}),
@@ -58,7 +58,12 @@ const CountryCodeDropdown = () => {
             if(data.success){
                 console.log('OTP Sent:',data);
             }
-            else{//}
+            else{
+                console.error('Error:',data.message);
+            }
+        }
+        catch(error){
+            console.error('Error sending OTP:',error);
         }
     }
 
@@ -75,6 +80,26 @@ const CountryCodeDropdown = () => {
             <PhoneInput country={'india'} value={phone} onChange={(value) => setPhone(value)} inputStyle={{width: '100%',height: '40px'}}/>
             {!isValid && <p style={{color: 'red'}}>{errorMessage}</p>}
             <button onClick={handleLogin}>Login</button>
+        </div>
+    )
+}
+
+export default CountryCodeDropdown;*/
+
+import React,{useState} from 'react';
+
+const CountryCodeDropdown = () => {
+    const [phone,setPhone] = useState('');
+    const [message,setMessage] = useState('');
+
+    return(
+        <div className="phone-number-container">
+            <h2>Phone Login</h2>
+            <div className='register-container'>
+                <input type="text" placeholder="Enter phone number" value={phone} onChange={(e) => setPhone(e.target.value)}/>
+                <button>Register</button>
+            </div>
+            <p>{message}</p>
         </div>
     )
 }

@@ -27,9 +27,9 @@
 }
 
 .navbar-container{
-    position: fixed;
     background-color: white;
     width: 98vw;
+    overflow: hidden;
 }
 
 .links-container{

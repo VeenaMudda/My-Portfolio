@@ -21,7 +21,7 @@ const AboutUs = () => {
             <div className='bar-container'>
                 <div className='about-us-navbar-container'>
                     <div>
-                        <img src={logo} alt='logo' className='portfolio-logo'/>
+                        <Link to={'/'}><img src={logo} alt='logo' className='portfolio-logo'/></Link>
                     </div>
                     <div className='links-container'>
                         <Link to={'/beauty'} className='navbar-link'>Beauty Club</Link>
