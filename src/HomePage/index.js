@@ -10,8 +10,10 @@ const HomePage = () => {
         <div className='home-container'>
             <NavBar/>
             <JoinBar/>
-            <PictureSection/>
-            <Body/>
+            <div className='body-section'>
+                <PictureSection/>
+                <Body/>
+            </div>
         </div>
     )
 }

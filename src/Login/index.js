@@ -45,7 +45,7 @@ const Login = ({onClose,children}) => {
             <div className='register-container'>
                 <input type="text" placeholder="Enter phone number" className='phone-number' value={phone} onChange={handleChange}/>
                 <p className='message'>{message}</p>
-                <button disabled={phone.length !== 10} onClick={handleRegister} className='register-button'>Register</button>
+                <button disabled={phone.length !== 10} onClick={handleRegister} className='register-button'>Login</button>
             </div>
         </div>
     )

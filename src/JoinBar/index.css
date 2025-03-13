@@ -13,3 +13,23 @@
 .join{
     text-decoration: underline;
 }
+
+.join-modal{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5vh;
+    padding-left: 5vh;
+    padding-right: 5vh;
+}
+
+.your-name{
+    height: 3vh;
+    border-color: 1px grey;
+}
+
+.submit-button{
+    height: 5vh;
+    background-color: black;
+    color: white;
+    border: 0px;
+}

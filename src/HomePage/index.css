@@ -1,3 +1,7 @@
 .home-container{
     overflow: hidden;
 }
+
+.body-section{
+    overflow: scroll;
+}
