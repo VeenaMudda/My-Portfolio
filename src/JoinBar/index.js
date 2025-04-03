@@ -6,8 +6,13 @@ import Modal from '../Modal';
 const JoinBar = () => {
     const [showLogin,setShowLogin] = useState(false);
 
+    const [formData,setFormData] = useState({name:'',phone:'',city:''});
+
     const handleLogin = () => {
         setShowLogin(!showLogin);
+        if(showLogin === true){
+            setFormData({name:'',phone:'',city:''});
+        }
     }
 
     const [name,setName] = useState('');
@@ -15,22 +20,45 @@ const JoinBar = () => {
     const [city,setCity] = useState('');
 
     const handleChangeName = (e) => {
-        const nameInput = e.target.value;
-        setName(nameInput);
+        const name = e.target.value;
+        setFormData((prev) => ({...prev,name}));
+        //console.log(formData.name);
     }
 
     const handleChangePhone = (e) => {
-        const input = e.target.value;
-        setPhone(input);
+        const phone = e.target.value;
+        setFormData((prev) => ({...prev,phone}));
     }
 
     const handleChangeCity = (e) => {
-        const inputCity = e.target.value;
-        setCity(inputCity);
+        const city = e.target.value;
+        setFormData((prev) => ({...prev,city}));
     }
 
-    const handleSubmit = () => {
-        console.log("click")
+    const handleSubmit = async() => {
+        console.log("click");
+
+        try{
+            const response = await fetch("http://localhost:3001/api/register",{
+                method: "POST",
+                headers: {"Content-Type" : "application/json"},
+                body: JSON.stringify(formData)
+            });
+            console.log(formData);
+            const data = await response.json();
+            
+            if(response.ok){
+                setFormData({name:'',phone:'',city:''});
+                console.log(data.message);
+            }
+            else{
+                console.log(data.error);
+            }
+        }
+        
+        catch(error){
+            console.log(error);
+        }
     }
 
     return(
@@ -41,12 +69,12 @@ const JoinBar = () => {
                 <div className='join-modal'>
                     <h1>Registration Form</h1><br/>
                     <p>Enter your name</p>
-                    <input type='text' className='your-name' placeholder='First and last name' value={name} onChange={handleChangeName}/>
+                    <input type='text' className='your-name' placeholder='First and last name' value={formData.name} onChange={handleChangeName}/>
                     <p>Enter your WhatsApp Number</p>
-                    <input type='number' className='your-name' placeholder='1234567890' value={phone} onChange={handleChangePhone}/>
+                    <input type='number' className='your-name' placeholder='1234567890' value={formData.phone} onChange={handleChangePhone}/>
                     <p>Enter your city</p>
-                    <input type="string" className='your-name' placeholder='Hyderabad' value={city} onChange={handleChangeCity}/><br/>
-                    <button type='submit' disabled={name==='' || phone.length!==10 || city===''} className='submit-button' onClick={handleSubmit}>Submit</button>
+                    <input type="string" className='your-name' placeholder='Hyderabad' value={formData.city} onChange={handleChangeCity}/><br/>
+                    <button type='submit' disabled={formData.name==='' || formData.phone.length!==10 || formData.city===''} className='submit-button' onClick={handleSubmit}>Submit</button>
                 </div>
             </Modal>}
         </div>
