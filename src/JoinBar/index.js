@@ -8,6 +8,8 @@ const JoinBar = () => {
 
     const [formData,setFormData] = useState({name:'',phone:'',city:''});
 
+    const [message,setMessage] = useState('');
+
     const handleLogin = () => {
         setShowLogin(!showLogin);
         if(showLogin === true){
@@ -50,9 +52,11 @@ const JoinBar = () => {
             if(response.ok){
                 setFormData({name:'',phone:'',city:''});
                 console.log(data.message);
+                setMessage(data.message);
             }
             else{
                 console.log(data.error);
+                setMessage(data.error);
             }
         }
         
@@ -74,6 +78,7 @@ const JoinBar = () => {
                     <input type='number' className='your-name' placeholder='1234567890' value={formData.phone} onChange={handleChangePhone}/>
                     <p>Enter your city</p>
                     <input type="string" className='your-name' placeholder='Hyderabad' value={formData.city} onChange={handleChangeCity}/><br/>
+                    <p className='message'>{message}</p>
                     <button type='submit' disabled={formData.name==='' || formData.phone.length!==10 || formData.city===''} className='submit-button' onClick={handleSubmit}>Submit</button>
                 </div>
             </Modal>}
