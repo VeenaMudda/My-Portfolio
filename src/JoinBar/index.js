@@ -37,11 +37,14 @@ const JoinBar = () => {
         setFormData((prev) => ({...prev,city}));
     }
 
+    const API_BASE_URL = "https://react-portfolio-backend-8s8a.onrender.com";
+
     const handleSubmit = async() => {
         console.log("click");
 
         try{
-            const response = await fetch("http://localhost:3001/api/register",{
+            //http://localhost:3001/api/register
+            const response = await fetch(`${API_BASE_URL}/api/register`,{
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify(formData)
