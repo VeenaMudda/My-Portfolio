@@ -69,9 +69,9 @@ const JoinBar = () => {
     }
 
     return(
-        <div className='join-container'>
-            <p>New to the club?</p>
-            <p className='join' onClick={handleLogin}>{showLogin ? 'Exit' : 'Join Now'}</p>&nbsp;<ArrowForwardIcon/>
+        <div className='joinbar-container'>
+            <p className='joinbar-description'>New to the club?</p>
+            <p className='join' onClick={handleLogin}>{showLogin ? 'Exit' : 'Join Now'}</p>&nbsp;<ArrowForwardIcon sx={{fontSize: '0.9rem',paddingTop: '0.5%'}}/>
             {showLogin && <Modal className='modal-overlay' onClose={handleLogin}>
                 <div className='join-modal'>
                     <h1>Registration Form</h1><br/>

@@ -3,10 +3,20 @@
     width: 33.33vw;
 }
 
-.pictures-container{
+/*.pictures-container{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     width: 100vw;
     align-items: center;
+}*/
+
+@media (max-width: 375px){
+    .picture-section-pictures-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100vw;
+        align-items: center;
+    }
 }

@@ -22,7 +22,7 @@ const NavbarBeautyClub = () => {
     return(
         <div className="navbar-beautyclub-container">
             <Link to={"#"} onClick={scrollToTop}><img src={icon} alt='portfolio logo' className="portfolio-logo"/></Link>
-            <div className='links-container'>
+            <div className='baurty-links-container'>
                 <Link to={'/'} className='navbar-link'>Home</Link>
                 <Link to={'/community'} className='navbar-link'>Community</Link>
                 <button className='navbar-login' onClick={handleLogin}>{showLogin ? 'Close Login' : 'Member Login'}</button>

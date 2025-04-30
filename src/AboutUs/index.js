@@ -23,11 +23,11 @@ const AboutUs = () => {
                     <div>
                         <Link to={'/'}><img src={logo} alt='logo' className='portfolio-logo'/></Link>
                     </div>
-                    <div className='links-container'>
+                    <div className='aboutus-links-container'>
                         <Link to={'/beauty'} className='navbar-link'>Beauty Club</Link>
                         <Link to={'/community'} className='navbar-link'>Community</Link>
                         <Link to={'#'} className='navbar-link'>About Us</Link>
-                        <button className='navbar-login' onClick={handleLogin}>{showLogin ? 'close Login' : 'Member Login'}</button>
+                        <button className='aboutus-navbar-login' onClick={handleLogin}>{showLogin ? 'close Login' : 'Member Login'}</button>
                     </div>
                 </div>
                 <JoinBar/>

@@ -1,5 +1,5 @@
 
-.join-container{
+/*.joinbar-container{
     display: flex;
     flex-direction: row;
     background-color: lavender;
@@ -8,11 +8,31 @@
     align-items: center;
     padding-top: 1vh;
     padding-bottom: 1vh;
+}*/
+
+@media (max-width: 375px){
+    .joinbar-container{
+        display: flex;
+        flex-direction: row;
+        background-color: lavender;
+        justify-content: center;
+        align-items: center;
+        height: 4vh;
+    }
+
+    .joinbar-description{
+        font-size: 70%;
+    }
+
+    .join{
+        text-decoration: underline;
+        font-size: 70%;
+    }
 }
 
-.join{
+/*.join{
     text-decoration: underline;
-}
+}*/
 
 .join-modal{
     display: flex;

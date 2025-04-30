@@ -12,7 +12,7 @@ import carousel5 from '../pictures/carousel_5.jpg';
 const Community = () => {
     return(
         <div className='community-main-page'>
-            <div className='navbar-container'>
+            <div className='community-navbar-container'>
                 <Link to={'/'}><img src={portfolio_logo} alt='portfolio logo' className='portfolio-logo'/></Link>
                 <div className='links-container'>
                     <Link to={'/beauty'} className='navbar-link'>Beauty Club</Link>
