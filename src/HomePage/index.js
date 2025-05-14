@@ -9,11 +9,11 @@ const HomePage = () => {
     return(
         <div className='home-container'>
             <NavBar/>
-            <JoinBar/>
             <div className='body-section'>
                 <PictureSection/>
                 <Body/>
             </div>
+           
         </div>
     )
 }

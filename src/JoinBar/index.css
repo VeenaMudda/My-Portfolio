@@ -10,6 +10,10 @@
     padding-bottom: 1vh;
 }*/
 
+:root{
+    --joinbar-height: 4vh;
+}
+
 @media (max-width: 600px){
     .joinbar-container{
         display: flex;
@@ -17,7 +21,10 @@
         background-color: lavender;
         justify-content: center;
         align-items: center;
-        height: 4vh;
+        height: var(--joinbar-height);
+        position: fixed;
+        width: 100vw;
+        z-index: 999;
     }
 
     .joinbar-description{

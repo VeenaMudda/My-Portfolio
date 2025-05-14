@@ -6,13 +6,17 @@
     padding: 1%;
 }*/
 
+:root{
+    --navbar-height:8vh;
+}
+
 @media (max-width: 600px){
     .navbar-container{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        min-height: 4vh;
-        padding: 1%;
+        height: var(--navbar-height);
+    }
+
+    .joinbar-container{
+        top: var(--navbar-height);
     }
 }
 

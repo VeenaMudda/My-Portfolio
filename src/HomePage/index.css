@@ -1,8 +1,14 @@
 .home-container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     overflow: hidden;
 }
 
 .body-section{
-    overflow: scroll;
-    height: 91vh;
+    overflow-y: auto;
+    position: relative;
+    padding-top: 12vh;
+    flex-grow: 1;
 }
+

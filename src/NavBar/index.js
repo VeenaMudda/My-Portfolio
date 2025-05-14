@@ -8,9 +8,12 @@ import Login from '../Login';
 import { AppBar, Button, IconButton, Menu, MenuItem, Toolbar, useMediaQuery } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import JoinBar from '../JoinBar';
+import PictureSection from '../PictureSection';
+import Body from '../Body';
 
 const NavBar = () =>{
-    const isSmallScreen = useMediaQuery('(max-width: 360px');
+    const isSmallScreen = useMediaQuery('(max-width: 359px');
     const [anchorEl,setAnchorEl] = useState(null);
     const [openMenu,setOpenMenu] = useState(false);
     const [isIconOpen, setIsIconOpen] = useState(false);
@@ -43,16 +46,13 @@ const NavBar = () =>{
     }
 
     return(
-        <>
-            <AppBar position='static' color='white'>
-                <Toolbar sx={{justifyContent: 'space-between'}}>
+        <div className='layout'>
+            <AppBar position='fixed' elevation={1} color='white' className='navbar-container'>
+                <Toolbar sx={{justifyContent:'space-between'}}>
                     <Link to={"/"}><img src={portfolio_logo} alt='portfolio logo' className='portfolio-logo'/></Link>
                     {isSmallScreen ? 
                     <div>
                         {isIconOpen ? <IconButton onClick={handleMenuClick}><CloseIcon/></IconButton> : <IconButton onClick={handleMenuClick}><MenuIcon/></IconButton>}
-                        <IconButton onClick={handleMenuClick}>
-                            <MenuIcon/>
-                        </IconButton>
                         <Menu open={Boolean(anchorEl)} anchorEl={anchorEl} onClose={handleMenuClose}>
                             <MenuItem onClick={handleMenuClose}>
                                 <Link to={'/beauty'} className='navbar-link'>Beauty Club</Link>
@@ -67,12 +67,18 @@ const NavBar = () =>{
                                 <p onClick={handleLogin} className='navbar-link'>{showLogin ? 'Close Login' : 'Member Login'}</p>
                             </MenuItem>
                         </Menu>
-                    </div> : <div><div className='links-container'>
+                    </div> : <div>
+                        <div className='links-container'>
+                            <Link to={'/beauty'} className='navbar-link'>Beauty Club</Link>
+                            <Link to={'/community'} className='navbar-link'>Community</Link>
+                            <Link to={'/about-us'} className='navbar-link'>About Us</Link>
+                            <p onClick={handleLogin} className='navbar-link'>{showLogin ? 'Close Login' : 'Member Login'}</p>
                     </div></div>}
                 </Toolbar>
+                <JoinBar/>
             </AppBar>
             {showLogin && <Modal className='modal-overlay' onClose={handleLogin}><Login/></Modal>}
-        </>
+        </div>
     )
 }
 
