@@ -14,18 +14,22 @@
     --joinbar-height: 4vh;
 }
 
+.joinbar-container{
+    display: flex;
+    flex-direction: row;
+    background-color: lavender;
+    justify-content: center;
+    align-items: center;
+    height: var(--joinbar-height);
+    position: fixed;
+    width: 100vw;
+    z-index: 999;
+}
+
+@media (max-width: 360px){
+}
+
 @media (max-width: 600px){
-    .joinbar-container{
-        display: flex;
-        flex-direction: row;
-        background-color: lavender;
-        justify-content: center;
-        align-items: center;
-        height: var(--joinbar-height);
-        position: fixed;
-        width: 100vw;
-        z-index: 999;
-    }
 
     .joinbar-description{
         font-size: 70%;

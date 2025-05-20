@@ -13,7 +13,7 @@ import PictureSection from '../PictureSection';
 import Body from '../Body';
 
 const NavBar = () =>{
-    const isSmallScreen = useMediaQuery('(max-width: 359px');
+    const isSmallScreen = useMediaQuery('(max-width: 359px)');
     const [anchorEl,setAnchorEl] = useState(null);
     const [openMenu,setOpenMenu] = useState(false);
     const [isIconOpen, setIsIconOpen] = useState(false);
@@ -48,7 +48,7 @@ const NavBar = () =>{
     return(
         <div className='layout'>
             <AppBar position='fixed' elevation={1} color='white' className='navbar-container'>
-                <Toolbar sx={{justifyContent:'space-between'}}>
+                <Toolbar sx={{justifyContent:'space-between'}} className='navbar-toolbar-container'>
                     <Link to={"/"}><img src={portfolio_logo} alt='portfolio logo' className='portfolio-logo'/></Link>
                     {isSmallScreen ? 
                     <div>

@@ -6,13 +6,11 @@
     width: 100vw;
 }*/
 
-@media (max-width: 600px){
-    .body-container{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100vw;
-    }
+.body-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
 }
 
 .greet{
