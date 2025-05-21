@@ -11,11 +11,16 @@ const PictureSection = () => {
     return(
         <div className='picture-section-pictures-container'>
             {isSmallScreen ? 
-                <Carousel autoPlay={true} infiniteLoop={true} showStatus={false} showArrows={false} showIndicators={false} showThumbs={false} className='carousel'>
+                <Carousel autoPlay={true} infiniteLoop={true} dynamicHeight={true} showStatus={false} showArrows={false} showIndicators={false} showThumbs={false} className='carousel'>
                     <img src={makeup_artist} alt="makeup artist" className='picture'/>
                     <img src={self_makeup} alt="self makeup" className='picture'/>
                     <img src={look} alt='makeup look' className='picture'/>
-                </Carousel> : <div>b</div>}
+                </Carousel> : 
+                <div className='pictures-section-pictures-container'>
+                    <img src={makeup_artist} alt='makeup artist' className='picture'/>
+                    <img src={self_makeup} alt='self makeup' className='picture'/>
+                    <img src={look} alt='makeup look' className='picture'/>
+                </div>}
         </div>
     )
 }
