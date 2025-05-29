@@ -25,19 +25,33 @@
     width: 100vw;
     z-index: 999;
 }
-
-@media (max-width: 360px){
-}
-
-@media (max-width: 600px){
+@media (max-width: 320px){
+    .joinbar-container{
+        height: 5vh;
+    }
 
     .joinbar-description{
-        font-size: 70%;
+        font-size: 60%;
+    }
+
+    .join{
+        font-size: 60%;
+        text-decoration: underline;
+    }
+}
+@media (min-width: 600px) and (max-width:712px){
+
+    .joinbar-description{
+        font-size: 60%;
     }
 
     .join{
         text-decoration: underline;
-        font-size: 70%;
+        font-size: 60%;
+    }
+
+    .joinbar-container{
+        height: var(--joinbar-height);
     }
 }
 
@@ -68,4 +82,13 @@
 .message{
     color: red;
     align-self: center;
+}
+
+
+@media (min-width: 713px) and (max-width: 800px){
+    @media (min-height: 1139px) and (max-height: 1280px){
+        .joinbar-container{
+            height: 3vh;
+        }
+    }
 }

@@ -52,7 +52,7 @@ const NavBar = () =>{
                     <Link to={"/"}><img src={portfolio_logo} alt='portfolio logo' className='portfolio-logo'/></Link>
                     {isSmallScreen ? 
                     <div>
-                        {isIconOpen ? <IconButton onClick={handleMenuClick}><CloseIcon/></IconButton> : <IconButton onClick={handleMenuClick}><MenuIcon/></IconButton>}
+                        {isIconOpen ? <IconButton onClick={handleMenuClick}><CloseIcon/></IconButton> : <IconButton className='menu' onClick={handleMenuClick}><MenuIcon/></IconButton>}
                         <Menu open={Boolean(anchorEl)} anchorEl={anchorEl} onClose={handleMenuClose}>
                             <MenuItem onClick={handleMenuClose}>
                                 <Link to={'/beauty'} className='navbar-link'>Beauty Club</Link>

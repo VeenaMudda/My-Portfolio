@@ -10,17 +10,25 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
 }
 
 .greet{
     color: darkgray;
+    text-align: center;
 }
 
 /*.main-title{
     text-align: center;
     font-size: 7vh;
 }*/
+
+@media (max-width: 320px){
+    @media (max-height: 320px){
+        .body-container{
+            height: 60vh;
+        }
+    }
+}
 
 @media (max-width: 600px){
     .main-title{
@@ -29,10 +37,23 @@
     }
 }
 
-@media (max-width: 600px){
+.body-sub-title{
+    text-align: center;
+    font-size: 3vh;
+    margin: 1vh;
+}
+
+@media (min-width: 600px) and (max-width:712px){
     .body-sub-title{
         text-align: center;
         font-size: 3vh;
         margin: 1vh;
+    }
+    
+    @media (max-height: 360px){
+        .body-container{
+            overflow: auto;
+            height: 60vh;
+        }
     }
 }
