@@ -7,7 +7,7 @@ import look from '../pictures/look.jpg';
 import { useMediaQuery } from '@mui/material';
 
 const PictureSection = () => {
-    const isSmallScreen = useMediaQuery('(max-width: 384px)');
+    const isSmallScreen = useMediaQuery('(max-width: 374px)');
     return(
         <div className='picture-section-pictures-container'>
             {isSmallScreen ? 

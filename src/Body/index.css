@@ -10,6 +10,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 100vw;
 }
 
 .greet{
@@ -25,12 +27,13 @@
 @media (max-width: 320px){
     @media (max-height: 320px){
         .body-container{
-            height: 60vh;
+            overflow: auto;
+            height: 70vh;
         }
     }
 }
 
-@media (max-width: 600px){
+@media(max-width: 600px){
     .main-title{
         text-align: center;
         font-size: 4vh;
@@ -53,7 +56,7 @@
     @media (max-height: 360px){
         .body-container{
             overflow: auto;
-            height: 60vh;
+            height: 70vh;
         }
     }
 }
